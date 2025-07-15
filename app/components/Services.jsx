@@ -4,10 +4,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -16,16 +15,16 @@ const fadeInUp = {
 
 const Services = () => {
   const colors = [
-    'bg-[#E6F4F1]', // light teal
-    'bg-[#FDF6EC]', // light orange
-    'bg-[#F4ECF7]', // light purple
-    'bg-[#FFF5F7]', // blush pink
-    'bg-[#F0F8FF]', // AliceBlue
-    'bg-[#FAF3DD]', // vanilla
+    'bg-[#E6F4F1]',
+    'bg-[#FDF6EC]',
+    'bg-[#F4ECF7]',
+    'bg-[#FFF5F7]',
+    'bg-[#F0F8FF]',
+    'bg-[#FAF3DD]',
   ];
 
   return (
-    <div id="services" className="w-full px-[12%] py-10 scroll-mt-20">
+    <div id="services" className="w-full px-4 sm:px-6 lg:px-12 py-10 scroll-mt-20">
       <motion.h4
         className="text-center mb-2 text-lg font-Ovo"
         initial="hidden"
@@ -58,16 +57,18 @@ const Services = () => {
       </motion.p>
 
       <Swiper
-        modules={[Pagination, Autoplay, EffectFade]}
+        modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
         }}
         spaceBetween={20}
-        slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
       >
         {serviceData.map(({ icon, title, description, link }, index) => {
           const bgColor = colors[index % colors.length];
@@ -82,10 +83,21 @@ const Services = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Image src={icon} alt={`${title} icon`} className="w-10 h-10 mb-4" />
+                <Image 
+                  src={icon} 
+                  alt={`${title} icon`} 
+                  width={40} 
+                  height={40} 
+                  className="mb-4" 
+                />
                 <h3 className="text-lg font-semibold mb-3 text-gray-800">{title}</h3>
                 <p className="text-sm text-gray-600 leading-5">{description}</p>
-                <a href={link} className="flex items-center gap-2 text-sm mt-5 text-blue-600 hover:underline">
+                <a 
+                  href={link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-2 text-sm mt-5 text-blue-600 hover:underline"
+                >
                   Read more <ArrowRight size={16} />
                 </a>
               </motion.div>

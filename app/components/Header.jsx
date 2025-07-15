@@ -4,17 +4,26 @@ import React from 'react'
 
 const Header= () => {
   return (
-    <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex 
-    flex-col items-center justify-center gap-4'>
-        <div className='mt-15'>
+    // <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex 
+    // flex-col items-center justify-center gap-4 pt-32'>
+
+<div className='w-11/12 max-w-3xl text-center mx-auto min-h-screen flex 
+  flex-col items-center justify-center gap-4 pt-20 px-4 sm:px-6 md:px-0'>
+
+
+
+        <div className='mt-10'>
         <Image src={assets.profile_img} alt='' className='rounded-full w-32'/>
         </div>
-    <h3 className='flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo'>Hi I'm Eddie Kura 
-        <Image src={assets.hand_icon} alt='' className='w-6'/></h3>
-        <h1 className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>
-            FullStack Developer based in Eldoret</h1>
-            <p className='max-w-2xl mx-auto font-Ovo'>I am a fullstack developer from Eldoret, Kenya with over 5 years of experience
-                in multiple companies like KCB and Mediheal
+          <h1 className='text-3xl sm:text-6xl lg:text-[40px] font-Ovo'>
+            Hi, I'm Eddie - a Full-Stack Developer crafting modern, responsive web apps </h1>
+            <p className='max-w-2xl mx-auto font-Ovo'>
+              Seasoned Software Developer and IT Professional with 5 years of hands-on experience 
+              in full-stack development, system design, and digital solutions. 
+              Based in Eldoret, Kenya, I have built a strong reputation for delivering reliable,
+               user-centric applications and leveraging technology to address real-world problems. 
+               Adept at both front-end and back-end development, I thrive in dynamic environments 
+               that require innovative thinking, precision, and a deep commitment to user experience.
             </p>
             <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
                 <a href="#contact"
@@ -24,7 +33,7 @@ const Header= () => {
                 >Contact Me <Image src={assets.right_arrow_white} 
                 alt='' className='w-4'/></a>
 
-                <a href="/sample.resume.pdf" download className='px-10 py-3 border rounded-full
+                <a href="/DevEddieKip.pdf" download className='px-10 py-3 border rounded-full
                 border-gray-500 flex items-center gap-2'>My Resume <Image src={assets.download_icon} 
                 alt='' className='w-4'/></a>
             </div>
