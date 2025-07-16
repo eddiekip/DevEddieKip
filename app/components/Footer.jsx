@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white px-[12%] py-12 mt-20 relative">
+    <footer className="bg-gray-900 text-white px-[12%] py-12 mt-10 relative">
       <div className="grid md:grid-cols-3 gap-10">
         {/* Social Media */}
         <div>
@@ -65,9 +65,9 @@ const Footer = () => {
         <div>
           <h4 className="text-lg font-semibold mb-4">Links</h4>
           <ul className="text-sm text-gray-400 space-y-2">
-            <li><a href="/privacy-policy" className="hover:text-white">Privacy Policy</a></li>
-            <li><a href="/terms" className="hover:text-white">Terms & Conditions</a></li>
-            <li><a href="/contact" className="hover:text-white">Contact</a></li>
+            <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" className="hover:text-white">Terms & Conditions</a></li>
+            <li><a href="#" className="hover:text-white">Contact</a></li>
           </ul>
         </div>
       </div>
